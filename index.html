@@ -23,20 +23,6 @@
   <meta property="twitter:description" content="Đào tạo lái xe các hạng, cấp đổi bằng lái, đổi bằng quốc tế và cho thuê tập lái riêng với giá cạnh tranh nhất.">
   <meta property="twitter:image" content="https://dichvubanglai.github.io/banglaixe/BÌA-1.png">
   <style>
-    :root {
-      --primary-color: #003366;
-      --secondary-color: #001a33;
-      --accent-color: #0066cc;
-      --text-color: #333333;
-      --section-dark-bg: #f8f9fa;
-      --section-light-bg: #ffffff;
-      --btn-color: #28a745;
-      --btn-hover: #218838;
-      --border-radius: 8px;
-      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s ease;
-    }
-
     * {
       margin: 0;
       padding: 0;
@@ -44,24 +30,30 @@
       font-family: 'Arial', sans-serif;
     }
 
+    :root {
+      --primary-color: #15305e;
+      --secondary-color: #091f42;
+      --accent-color: #4a90e2;
+      --text-color: #333333;
+      --light-bg: #ffffff;
+      --dark-bg: #f5f7fa;
+      --btn-color: #28a745;
+      --btn-hover: #218838;
+    }
+
     body {
-      line-height: 1.6;
       color: var(--text-color);
-      background-color: #f5f5f5;
-      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), 
-                        url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj48ZmlsdGVyIGlkPSJub2lzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuMDEiIG51bU9jdGF2ZXM9IjMiIHN0aXRjaFRpbGVzPSJzdGl0Y2giIHJlc3VsdD0idHVyYnVsZW5jZV9mcmFjdGFsTm9pc2UiLz48ZmVDb21wb3NpdGUgb3BlcmF0b3I9ImFyaXRobWV0aWMiIGsxPSIwLjEiIGsyPSIwLjEiIGszPSIwLjEiIGs0PSIwLjAiIGluPSJ0dXJidWxlbmNlX2ZyYWN0YWxOb2lzZSIgaW4yPSJ0dXJidWxlbmNlX2ZyYWN0YWxOb2lzZSIgcmVzdWx0PSJub2lzZVIiLz48ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMC4wNSAwIiBpbj0ibm9pc2VSIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjUwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiNmNWY1ZjUiIGZpbHRlcj0idXJsKCNub2lzZSkiLz48L3N2Zz4=');
-      background-attachment: fixed;
+      line-height: 1.6;
       overflow-x: hidden;
     }
 
+    /* Header Section */
     header {
-      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      background: linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
       color: white;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 60px 20px;
       position: relative;
-      overflow: hidden;
-      box-shadow: var(--box-shadow);
     }
 
     header::before {
@@ -71,105 +63,88 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJNNTAsNTAgTDc1LDI1IE01MCw1MCBMMjUsNzUgTTUwLDUwIEwyNSwyNSBNNTAsNTAgTDc1LDc1Ij48L3BhdGg+PC9zdmc+');
-      background-size: 200px 200px;
-      opacity: 0.2;
-      z-index: 1;
+      background-image: linear-gradient(45deg, rgba(0,0,0,0.2) 25%, transparent 25%, transparent 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) 75%, transparent 75%, transparent);
+      background-size: 100px 100px;
+      opacity: 0.1;
     }
 
     header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
       position: relative;
       z-index: 2;
-      margin-bottom: 0.5rem;
-      font-size: 2.5rem;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     header p {
-      position: relative;
-      z-index: 2;
       font-size: 1.2rem;
       opacity: 0.9;
       max-width: 800px;
       margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
 
+    .logo-circle {
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle, white 40%, rgba(255,255,255,0.5) 60%, transparent 70%);
+      border-radius: 50%;
+      margin: 20px auto 0;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 0 20px rgba(255,255,255,0.5);
+    }
+
+    /* Navigation */
     nav {
       background-color: white;
       position: sticky;
       top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       width: 100%;
-      overflow: hidden;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
     .nav-container {
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
-      flex-wrap: nowrap;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none; /* IE and Edge */
-      scroll-behavior: smooth;
-      padding: 0 5px;
-      /* Cho phép kéo trên mobile */
-      touch-action: pan-x;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
-    
+
     .nav-container::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Opera */
+      display: none;
     }
 
     nav a {
       display: inline-block;
-      padding: 0.8rem 0.7rem;
       color: var(--primary-color);
       text-decoration: none;
+      padding: 15px 20px;
       font-weight: bold;
-      transition: var(--transition);
-      font-size: 0.9rem;
-      white-space: nowrap;
-      flex-shrink: 0;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border-bottom: 3px solid transparent;
     }
 
     nav a:hover {
+      background-color: rgba(21, 48, 94, 0.05);
       color: var(--accent-color);
-      background-color: rgba(52, 152, 219, 0.1);
     }
 
     nav a.active {
-      color: var(--accent-color);
       border-bottom: 3px solid var(--accent-color);
+      color: var(--accent-color);
     }
-    
-    /* Hiển thị gợi ý kéo ngang */
-    .nav-scroll-hint {
-      display: none;
-      position: absolute;
-      right: 5px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 30px;
-      height: 30px;
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 50%;
-      text-align: center;
-      line-height: 30px;
-      font-size: 1.2rem;
-      color: var(--primary-color);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      animation: pulse 2s infinite;
-      z-index: 10;
-    }
-    
+
+    /* Main Content Sections */
     .container {
-      width: 90%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 15px;
+      padding: 0 20px;
     }
 
     section {
@@ -179,194 +154,126 @@
     .section-title {
       text-align: center;
       margin-bottom: 50px;
-      position: relative;
     }
 
     .section-title h2 {
-      font-size: 2.2rem;
-      margin-bottom: 25px;
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
       position: relative;
       display: inline-block;
-      color: var(--primary-color);
     }
 
     .section-title h2::after {
       content: '';
       position: absolute;
-      bottom: -15px;
+      bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
-      width: 100px;
-      height: 4px;
+      width: 80px;
+      height: 3px;
       background: var(--accent-color);
-      transition: width 0.3s ease;
-    }
-
-    .section-title:hover h2::after {
-      width: 150px;
     }
 
     .section-title p {
       color: #666;
       max-width: 700px;
-      margin: 20px auto 0;
-      font-size: 18px;
-      line-height: 1.6;
+      margin: 0 auto;
     }
 
+    /* About Section */
     .about {
-      background: var(--section-light-bg);
+      background: var(--light-bg);
     }
 
-    .about-container,
-    .requirements-container,
-    .contact-container {
+    .about-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: 1fr 1fr;
       gap: 40px;
       align-items: center;
     }
 
-    .about-content p,
-    .requirements-content p {
-      margin-bottom: 20px;
-      color: #555;
-      line-height: 1.6;
+    .about-content p {
+      margin-bottom: 15px;
     }
 
-    .about-image img,
-    .requirements-image img,
-    .contact-image {
+    .about-image img {
       width: 100%;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      transition: transform 0.5s ease;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
 
-    .about-image img:hover,
-    .requirements-image img:hover,
-    .contact-image:hover {
-      transform: scale(1.02);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    .call-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--btn-color);
-      color: white;
-      padding: 12px 25px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: var(--transition);
-      margin-top: 20px;
-      font-size: 16px;
-    }
-
-    .call-btn i {
-      margin-right: 8px;
-    }
-
-    .call-btn:hover {
-      background: var(--btn-hover);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
-    }
-
+    /* Services Section */
     .services {
-      background: var(--section-dark-bg);
+      background: var(--dark-bg);
     }
 
     .services-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
-      margin-top: 40px;
     }
 
     .service-card {
       background: white;
-      border-radius: var(--border-radius);
-      padding: 30px 25px;
-      box-shadow: var(--box-shadow);
-      transition: var(--transition);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .service-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     }
 
     .service-card h3 {
       color: var(--primary-color);
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin-bottom: 15px;
       text-align: center;
-      position: relative;
-      padding-bottom: 15px;
-    }
-
-    .service-card h3::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: var(--accent-color);
-      transition: var(--transition);
-    }
-
-    .service-card:hover h3::after {
-      width: 100px;
     }
 
     .service-card p {
       color: #666;
       text-align: center;
-      flex-grow: 1;
     }
 
+    /* Packages Section */
     .packages {
-      background: var(--section-light-bg);
+      background: var(--light-bg);
     }
 
     .package-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
-      margin: 40px auto;
+      margin: 0 auto;
       max-width: 1000px;
     }
 
     .package-card {
       background: white;
-      border-radius: var(--border-radius);
-      padding: 30px 25px;
-      box-shadow: var(--box-shadow);
-      transition: var(--transition);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-align: center;
     }
 
     .package-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     }
 
     .package-card h3 {
       color: var(--primary-color);
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       margin-bottom: 15px;
     }
 
     .price {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       font-weight: bold;
       margin: 20px 0;
       color: var(--accent-color);
@@ -374,15 +281,14 @@
 
     .feature-list {
       list-style: none;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       text-align: left;
     }
 
     .feature-list li {
       margin-bottom: 10px;
-      padding-left: 30px;
+      padding-left: 25px;
       position: relative;
-      color: #555;
     }
 
     .feature-list li::before {
@@ -396,68 +302,98 @@
     .note {
       background: #f8f9fa;
       border-left: 4px solid var(--accent-color);
-      padding: 20px;
-      border-radius: var(--border-radius);
+      padding: 15px;
+      border-radius: 5px;
       margin-top: 30px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      transition: var(--transition);
     }
 
-    .note:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    /* Requirements Section */
+    .requirements-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
     }
 
-    .note p {
-      margin-bottom: 10px;
-      color: #555;
-      font-size: 0.95rem;
+    .requirements-content p {
+      margin-bottom: 15px;
     }
 
-    .note p:last-child {
-      margin-bottom: 0;
+    .requirements-image img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
 
+    /* Contact Section */
     .contact {
-      background: var(--section-dark-bg);
+      background: var(--dark-bg);
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
     }
 
     .contact-info h3 {
       color: var(--primary-color);
-      font-size: 1.8rem;
-      margin-bottom: 25px;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
     }
 
     .contact-info div {
       display: flex;
       align-items: center;
-      margin-bottom: 20px;
-      transition: var(--transition);
-    }
-
-    .contact-info div:hover {
-      transform: translateX(5px);
+      margin-bottom: 15px;
     }
 
     .contact-info i {
       margin-right: 15px;
       font-size: 1.5rem;
       color: var(--accent-color);
-      width: 30px;
+      min-width: 30px;
     }
 
-    .contact-info p {
-      color: #555;
-      font-size: 1.1rem;
+    .contact-image {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
 
+    /* CTA Button */
+    .call-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--btn-color);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .call-btn:hover {
+      background: var(--btn-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+    }
+
+    .call-btn i {
+      margin-right: 8px;
+    }
+
+    /* Footer */
     footer {
-      background: var(--secondary-color);
+      background: var(--primary-color);
       color: white;
       text-align: center;
       padding: 30px 0;
       position: relative;
-      overflow: hidden;
     }
 
     footer::before {
@@ -467,83 +403,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJNNTAsNTAgTDc1LDI1IE01MCw1MCBMMjUsNzUgTTUwLDUwIEwyNSwyNSBNNTAsNTAgTDc1LDc1Ij48L3BhdGg+PC9zdmc+');
+      background-image: linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.05) 75%, transparent 75%, transparent);
       background-size: 100px 100px;
       opacity: 0.1;
-      z-index: 1;
     }
 
-    footer p {
-      position: relative;
-      z-index: 2;
-    }
-
-    @keyframes pulse {
-      0% { opacity: 0.5; }
-      50% { opacity: 1; }
-      100% { opacity: 0.5; }
-    }
-    
-    @keyframes twinkle {
-      0% { opacity: 0.3; }
-      50% { opacity: 0.8; }
-      100% { opacity: 0.3; }
-    }
-    
-    .stars {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      opacity: 0.3;
-    }
-
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background-color: white;
-      border-radius: 50%;
-    }
-
-    .star.small {
-      width: 1px;
-      height: 1px;
-    }
-
-    .star.medium {
-      width: 2px;
-      height: 2px;
-    }
-
-    .star.large {
-      width: 3px;
-      height: 3px;
-    }
-
-    .logo-symbol {
-      width: 60px;
-      height: 60px;
-      margin: 1rem auto;
-      position: relative;
-    }
-
-    .logo-circle {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: radial-gradient(circle, white 10%, transparent 60%),
-                conic-gradient(var(--primary-color) 0deg, white 90deg, var(--primary-color) 180deg, white 270deg);
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Hiệu ứng scroll cho các phần tử */
+    /* Animations */
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
@@ -555,148 +420,87 @@
       transform: translateY(0);
     }
 
-    /* Custom scrollbar for webkit browsers */
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
+    /* Responsive */
+    @media (max-width: 992px) {
+      .about-container,
+      .requirements-container,
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
 
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-      border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: var(--primary-color);
-      border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--secondary-color);
+      .about-image,
+      .requirements-image {
+        order: -1;
+      }
     }
 
     @media (max-width: 768px) {
       header h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
-      
+
       header p {
         font-size: 1rem;
       }
 
-      .section-title h2 {
-        font-size: 1.8rem;
+      .logo-circle {
+        width: 60px;
+        height: 60px;
       }
-      
+
+      nav a {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+      }
+
       section {
         padding: 60px 0;
       }
 
-      nav a {
-        padding: 0.7rem 0.5rem;
-        font-size: 0.8rem;
-      }
-      
-      .nav-container {
-        justify-content: flex-start;
-        padding: 0 10px;
-      }
-      
-      .nav-scroll-hint {
-        display: block;
-      }
-      
-      /* Hiển thị gradient ở hai bên để gợi ý scroll */
-      nav::after {
-        content: '';
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 100%;
-        width: 30px;
-        background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.9));
-        pointer-events: none;
-        z-index: 2;
-      }
-
-      .package-card, .service-card {
-        padding: 20px 15px;
-      }
-
-      .contact-info h3 {
-        font-size: 1.5rem;
-      }
-
-      .contact-info p {
-        font-size: 1rem;
-      }
-
-      .call-btn {
-        width: 100%;
-        padding: 10px 15px;
+      .section-title h2 {
+        font-size: 1.8rem;
       }
     }
 
     @media (max-width: 480px) {
       header h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
       }
 
       header p {
         font-size: 0.9rem;
       }
-      
-      .logo-symbol {
+
+      .logo-circle {
         width: 50px;
         height: 50px;
       }
-      
+
       nav a {
-        padding: 0.7rem 0.45rem;
-        font-size: 0.75rem;
+        padding: 10px 12px;
+        font-size: 0.8rem;
       }
 
       .section-title h2 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
       }
 
-      .service-card h3, 
-      .package-card h3 {
-        font-size: 1.3rem;
-      }
-
-      .price {
-        font-size: 1.4rem;
-      }
-
-      .feature-list li {
-        font-size: 0.9rem;
-      }
-
-      .contact-info i {
-        font-size: 1.2rem;
-      }
-
-      .contact-info p {
-        font-size: 0.9rem;
+      .service-card,
+      .package-card {
+        padding: 20px 15px;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="stars" id="stars"></div>
+  <header id="home">
     <h1>Dịch Vụ Bằng Lái Xe Chuyên Nghiệp</h1>
     <p>Đào tạo lái xe các hạng, cấp đổi bằng lái, đổi bằng quốc tế và cho thuê tập lái riêng với giá cạnh tranh nhất</p>
-    <div class="logo-symbol">
-      <div class="logo-circle"></div>
-    </div>
+    <div class="logo-circle"></div>
   </header>
 
-  <div id="nav-scroll-indicator" class="nav-scroll-hint">→</div>
   <nav>
-    <div class="nav-container" id="nav-container">
+    <div class="nav-container">
       <a href="#home" class="active">Trang Chủ</a>
       <a href="#about">Giới Thiệu</a>
       <a href="#services">Dịch Vụ</a>
@@ -851,3 +655,73 @@
       <p>© 2025 Dịch Vụ Bằng Lái Xe - Thầy Hải. Tất cả các quyền được bảo lưu.</p>
     </div>
   </footer>
+
+  <script>
+    // Smooth scroll for navigation
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 70,
+            behavior: 'smooth'
+          });
+          
+          // Update active state
+          document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+          this.classList.add('active');
+        }
+      });
+    });
+
+    // Handle fade-in animations on scroll
+    function checkFadeElements() {
+      const fadeElements = document.querySelectorAll('.fade-in');
+      
+      fadeElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight * 0.9) {
+          element.classList.add('active');
+        }
+      });
+    }
+
+    // Update active nav link on scroll
+    function handleScroll() {
+      const scrollPosition = window.scrollY + 100;
+      
+      document.querySelectorAll('section').forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          const id = section.getAttribute('id');
+          
+          document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+          
+          const activeLink = document.querySelector(`nav a[href="#${id}"]`);
+          if (activeLink) {
+            activeLink.classList.add('active');
+          }
+        }
+      });
+      
+      // Check for fade elements
+      checkFadeElements();
+    }
+
+    // Event listeners
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('load', function() {
+      checkFadeElements();
+      handleScroll(); // Initial call to set active nav item
+    });
+  </script>
+</body>
+</html>
