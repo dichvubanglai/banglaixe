@@ -22,13 +22,6 @@
       --btn-hover: #218838;
     }
     
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    
     body {
       background-color: #ffffff;
       color: var(--text-color);
@@ -42,7 +35,7 @@
     header {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: #ffffff;
-      padding: 20px 0;
+      padding: 15px 0;
       position: fixed;
       width: 100%;
       top: 0;
@@ -173,10 +166,13 @@
     
     .services-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
       margin-top: 50px;
       padding: 0 10px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
     .service-card {
@@ -191,6 +187,7 @@
       flex-direction: column;
       align-items: flex-start;
       width: 100%;
+      min-height: 250px;
     }
     
     .service-card:hover {
@@ -204,14 +201,17 @@
       color: var(--primary-color);
       position: relative;
       padding-bottom: 15px;
+      text-align: center;
+      width: 100%;
     }
     
     .service-card h3::after {
       content: '';
       position: absolute;
       bottom: 0;
-      left: 0;
-      width: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
       height: 3px;
       background: var(--accent-color);
     }
@@ -222,6 +222,7 @@
       font-size: 16px;
       word-wrap: break-word;
       overflow-wrap: break-word;
+      text-align: center;
     }
     
     .packages {
@@ -295,11 +296,15 @@
       color: var(--text-color);
     }
     
+    .about-container,
+    .requirements-container,
     .contact-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
       align-items: center;
+      width: 100%;
+      padding: 0 10px;
     }
     
     .contact-info {
@@ -403,27 +408,16 @@
       box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
     }
     
-    .call-btn i {
-      margin-right: 15px;
-      font-size: 22px;
-    }
-    
-    .about-container,
-    .requirements-container,
-    .contact-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      align-items: center;
-      width: 100%;
-      padding: 0 10px;
-    }
-    
+    .about-content p,
     .requirements-content p {
       margin-bottom: 20px;
       font-size: 16px;
       color: #555;
-      line-height: 1.8;
+      line-height: 1.6;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      text-align: left;
+      width: 100%;
     }
     
     .note {
@@ -547,6 +541,10 @@
       header {
         padding: 10px 0;
       }
+      
+      .services-container {
+        grid-template-columns: 1fr;
+      }
     }
     
     @media (max-width: 480px) {
@@ -617,7 +615,7 @@
   </header>
 
   <section class="hero" id="home">
-          <div class="hero-content">
+    <div class="hero-content">
       <h1>Dịch Vụ Lái Xe Chuyên Nghiệp</h1>
       <p>Đào tạo lái xe các hạng, cấp đổi bằng lái, đổi bằng quốc tế và cho thuê tập lái riêng.</p>
       <a href="#contact" class="btn">Liên Hệ Ngay</a>
