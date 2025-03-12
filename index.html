@@ -109,14 +109,55 @@
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
+      justify-content: center; /* Căn giữa các liên kết */
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
       -ms-overflow-style: none;
+      position: relative;
     }
 
     .nav-container::-webkit-scrollbar {
       display: none;
+    }
+
+    /* Indicator cho việc scroll trên mobile */
+    .nav-scroll-hint {
+      display: none;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      background-color: rgba(21, 48, 94, 0.1);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 24px;
+      font-size: 14px;
+      color: var(--primary-color);
+      animation: pulse 2s infinite;
+      z-index: 10;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.5; }
+      50% { opacity: 1; }
+      100% { opacity: 0.5; }
+    }
+
+    /* Hiệu ứng scroll gradient để gợi ý */
+    nav::after {
+      content: '';
+      display: none; /* Mặc định ẩn, chỉ hiện trên mobile */
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 40px;
+      background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.9));
+      pointer-events: none;
+      z-index: 2;
     }
 
     nav a {
@@ -128,6 +169,7 @@
       font-size: 1rem;
       transition: all 0.3s ease;
       border-bottom: 3px solid transparent;
+      white-space: nowrap; /* Ngăn chữ bị xuống dòng */
     }
 
     nav a:hover {
@@ -448,6 +490,20 @@
         height: 60px;
       }
 
+      /* Cải thiện thanh nav trên mobile */
+      .nav-container {
+        justify-content: flex-start; /* Căn trái để có thể scroll */
+        padding: 0 20px;
+      }
+
+      .nav-scroll-hint {
+        display: block; /* Hiển thị gợi ý scroll */
+      }
+
+      nav::after {
+        display: block; /* Hiển thị gradient */
+      }
+
       nav a {
         padding: 12px 15px;
         font-size: 0.9rem;
@@ -508,6 +564,7 @@
       <a href="#requirements">Hồ Sơ</a>
       <a href="#contact">Liên Hệ</a>
     </div>
+    <div class="nav-scroll-hint">→</div>
   </nav>
 
   <section class="about fade-in" id="about">
@@ -657,6 +714,46 @@
   </footer>
 
   <script>
+    // Kiểm tra nếu thanh nav cần cuộn
+    function checkNavScroll() {
+      const navContainer = document.querySelector('.nav-container');
+      const scrollHint = document.querySelector('.nav-scroll-hint');
+      
+      if (navContainer && scrollHint) {
+        // Kiểm tra nếu nội dung lớn hơn container
+        if (navContainer.scrollWidth > navContainer.clientWidth) {
+          scrollHint.style.display = 'block';
+          
+          // Thêm animation để gợi ý người dùng cuộn
+          setTimeout(function() {
+            scrollHint.animate([
+              { transform: 'translateY(-50%) translateX(0)' },
+              { transform: 'translateY(-50%) translateX(5px)' },
+              { transform: 'translateY(-50%) translateX(0)' }
+            ], {
+              duration: 1000,
+              iterations: 3
+            });
+          }, 1000);
+          
+          // Ẩn gợi ý sau 5 giây
+          setTimeout(function() {
+            scrollHint.style.opacity = '0';
+            setTimeout(function() {
+              scrollHint.style.display = 'none';
+            }, 1000);
+          }, 5000);
+        } else {
+          scrollHint.style.display = 'none';
+        }
+        
+        // Ẩn mũi tên khi đã cuộn đến cuối
+        if (navContainer.scrollLeft + navContainer.clientWidth >= navContainer.scrollWidth - 10) {
+          scrollHint.style.display = 'none';
+        }
+      }
+    }
+
     // Smooth scroll for navigation
     document.querySelectorAll('nav a').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -716,11 +813,58 @@
       checkFadeElements();
     }
 
+    // Xử lý cuộn trên thanh nav trên mobile
+    function setupMobileNavScroll() {
+      const navContainer = document.querySelector('.nav-container');
+      
+      if (navContainer) {
+        // Xử lý cử chỉ vuốt ngang
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        navContainer.addEventListener('touchstart', function(e) {
+          touchStartX = e.touches[0].clientX;
+        }, false);
+        
+        navContainer.addEventListener('touchmove', function(e) {
+          touchEndX = e.touches[0].clientX;
+          
+          // Ngăn chặn việc scroll trang khi đang scroll menu
+          if (Math.abs(touchStartX - touchEndX) > 10) {
+            e.stopPropagation();
+          }
+        }, { passive: true });
+        
+        navContainer.addEventListener('touchend', function() {
+          const swipeDistance = touchStartX - touchEndX;
+          if (Math.abs(swipeDistance) > 50) {
+            const scrollAmount = swipeDistance > 0 ? 100 : -100;
+            navContainer.scrollBy({
+              left: scrollAmount,
+              behavior: 'smooth'
+            });
+          }
+        }, false);
+        
+        // Xử lý sự kiện cuộn trên thanh nav
+        navContainer.addEventListener('scroll', function() {
+          checkNavScroll();
+        });
+      }
+    }
+
     // Event listeners
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('load', function() {
       checkFadeElements();
       handleScroll(); // Initial call to set active nav item
+      checkNavScroll(); // Kiểm tra scroll nav
+      setupMobileNavScroll(); // Thiết lập cuộn nav trên mobile
+    });
+    
+    // Kiểm tra lại khi cửa sổ thay đổi kích thước
+    window.addEventListener('resize', function() {
+      checkNavScroll();
     });
   </script>
 </body>
