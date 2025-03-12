@@ -976,3 +976,884 @@
         padding: 0 5px;
       }
     }
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dịch Vụ Bằng Lái Xe - Thầy Hải</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="shortcut icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+   <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dichvubanglai.github.io/banglaixe/">
+  <meta property="og:title" content="Dịch Vụ Bằng Lái Xe - Thầy Hải">
+  <meta property="og:description" content="Đào tạo lái xe các hạng, cấp đổi bằng lái, đổi bằng quốc tế và cho thuê tập lái riêng với giá cạnh tranh nhất.">
+  <meta property="og:image" content="https://dichvubanglai.github.io/banglaixe/BÌA-1.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://dichvubanglai.github.io/banglaixe/">
+  <meta property="twitter:title" content="Dịch Vụ Bằng Lái Xe - Thầy Hải">
+  <meta property="twitter:description" content="Đào tạo lái xe các hạng, cấp đổi bằng lái, đổi bằng quốc tế và cho thuê tập lái riêng với giá cạnh tranh nhất.">
+  <meta property="twitter:image" content="https://dichvubanglai.github.io/banglaixe/BÌA-1.png">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    :root {
+      --primary-color: #003366;
+      --secondary-color: #001a33;
+      --accent-color: #0066cc;
+      --text-color: #333333;
+      --section-dark-bg: #f8f9fa;
+      --section-light-bg: #ffffff;
+      --btn-color: #28a745;
+      --btn-hover: #218838;
+    }
+    
+    body {
+      background-color: #ffffff;
+      color: var(--text-color);
+      line-height: 1.8;
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
+      position: relative;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: #ffffff;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+      overflow: hidden;
+    }
+    
+    .logo {
+      font-size: 18px;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    
+    @media (max-width: 768px) {
+      nav {
+        justify-content: center;
+      }
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 30px;
+    }
+    
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+      font-size: 16px;
+    }
+    
+    .nav-links a:hover {
+      color: #00ccff;
+    }
+    
+    .hero {
+      background: linear-gradient(to right, rgba(0, 26, 51, 0.8), rgba(0, 26, 51, 0.6));
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #ffffff;
+      position: relative;
+      margin-top: 0;
+      padding-top: 80px;
+      background-attachment: fixed;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('logo.png') no-repeat;
+      background-size: 300px;
+      opacity: 0.2;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      z-index: 2;
+      width: 100%;
+      background: rgba(0, 26, 51, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 1px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .hero h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: var(--btn-color);
+    }
+    
+    .hero p {
+      font-size: 1.4rem;
+      margin-bottom: 40px;
+      line-height: 1.6;
+      font-weight: 300;
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: var(--btn-color);
+      color: #ffffff;
+      padding: 14px 34px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      transition: width 0.3s ease;
+      z-index: -1;
+    }
+    
+    .btn:hover {
+      background: var(--btn-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+    }
+    
+    .btn:hover::before {
+      width: 100%;
+    }
+    
+    section {
+      padding: 100px 0;
+    }
+    
+    .about {
+      background: var(--section-light-bg);
+      color: var(--text-color);
+    }
+    
+    .services {
+      background: var(--section-dark-bg);
+      color: var(--text-color);
+    }
+    
+    .services-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+      padding: 0 10px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .service-card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 25px 20px;
+      transition: 0.3s;
+      border: 1px solid #eaeaea;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      min-height: 250px;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-card h3 {
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+      color: var(--primary-color);
+      position: relative;
+      padding-bottom: 15px;
+      text-align: center;
+      width: 100%;
+    }
+    
+    .service-card h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--accent-color);
+    }
+    
+    .service-card p {
+      color: #666;
+      line-height: 1.6;
+      font-size: 16px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      text-align: center;
+    }
+    
+    .packages {
+      background: var(--section-light-bg);
+      color: var(--text-color);
+    }
+    
+    .package-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+      padding: 0 10px;
+    }
+    
+    .package-card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 30px 20px;
+      transition: 0.3s;
+      border: 1px solid #eaeaea;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      width: 100%;
+    }
+    
+    .package-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .package-card h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+    
+    .price {
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin: 30px 0;
+      color: var(--accent-color);
+    }
+    
+    .feature-list {
+      list-style: none;
+      text-align: center;
+      margin-bottom: 35px;
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .feature-list li {
+      margin-bottom: 15px;
+      padding-left: 0;
+      position: relative;
+      color: #555;
+      font-size: 16px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .feature-list li::before {
+      content: '✓';
+      color: var(--btn-color);
+      font-weight: bold;
+      margin-right: 10px;
+      position: static;
+    }
+    
+    .contact {
+      background: var(--section-dark-bg);
+      color: var(--text-color);
+    }
+    
+    .about-container,
+    .requirements-container,
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      align-items: center;
+      width: 100%;
+      padding: 0 10px;
+    }
+    
+    .contact-info {
+      margin-bottom: 40px;
+    }
+    
+    .contact-info div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+    
+    .contact-info i {
+      margin-right: 20px;
+      font-size: 24px;
+      color: var(--accent-color);
+      width: 30px;
+    }
+    
+    .contact-info p {
+      font-size: 18px;
+      color: #555;
+    }
+    
+    .contact-image,
+    .about-image,
+    .requirements-image {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      height: auto;
+      object-fit: cover;
+    }
+    
+    footer {
+      background: var(--secondary-color);
+      color: #ffffff;
+      text-align: center;
+      padding: 30px 0;
+      font-size: 16px;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      width: 100%;
+      padding: 0 15px;
+    }
+    
+    .section-title h2 {
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      position: relative;
+      display: inline-block;
+      color: var(--primary-color);
+      text-align: center;
+      width: 100%;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: var(--accent-color);
+    }
+    
+    .section-title p {
+      color: #666;
+      max-width: 700px;
+      margin: 20px auto 0;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    
+    .call-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--btn-color);
+      color: white;
+      padding: 14px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      margin-top: 30px;
+      font-size: 16px;
+      text-align: center;
+      width: auto;
+      min-width: 200px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .call-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      transition: width 0.3s ease;
+      z-index: -1;
+    }
+    
+    .call-btn:hover {
+      background: var(--btn-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+    }
+    
+    .call-btn:hover::before {
+      width: 100%;
+    }
+    
+    .about-content p,
+    .requirements-content p {
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #555;
+      line-height: 1.6;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      text-align: left;
+      width: 100%;
+    }
+    
+    .note {
+      margin-top: 30px;
+      padding: 15px;
+      background: #f8f9fa;
+      border-left: 4px solid var(--accent-color);
+      border-radius: 5px;
+      font-size: 15px;
+      color: #555;
+      width: 100%;
+    }
+    
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .services-container,
+      .package-cards,
+      .about-container,
+      .requirements-container,
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-image,
+      .about-image,
+      .requirements-image {
+        margin-top: 30px;
+        max-width: 100%;
+      }
+      
+      .container {
+        width: 95%;
+        padding: 0 10px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .hero h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+      }
+      
+      .hero h1::after {
+        width: 60px;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+        line-height: 1.5;
+        max-width: 100%;
+      }
+      
+      section {
+        padding: 50px 0;
+      }
+      
+      .section-title h2 {
+        font-size: 1.6rem;
+      }
+      
+      .section-title p {
+        font-size: 0.95rem;
+      }
+      
+      .service-card, .package-card {
+        padding: 20px 15px;
+      }
+      
+      .service-card h3, 
+      .package-card h3 {
+        font-size: 1.4rem;
+      }
+      
+      .container {
+        width: 100%;
+        padding: 0 10px;
+      }
+      
+      .hero-content {
+        padding: 20px 15px;
+      }
+      
+      .price {
+        font-size: 1.8rem;
+      }
+      
+      .feature-list {
+        max-width: 100%;
+      }
+      
+      .feature-list li {
+        font-size: 14px;
+        justify-content: flex-start;
+        text-align: left;
+      }
+      
+      .contact-info div {
+        margin-bottom: 15px;
+      }
+      
+      .contact-info p {
+        font-size: 14px;
+      }
+      
+      .call-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+        width: 100%;
+        max-width: 100%;
+      }
+      
+      .logo {
+        font-size: 16px;
+        text-align: center;
+      }
+      
+      header {
+        padding: 10px 0;
+      }
+      
+      .services-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+      
+      .hero p {
+        font-size: 0.9rem;
+      }
+      
+      .btn {
+        padding: 10px 15px;
+        font-size: 14px;
+        width: 100%;
+      }
+      
+      .section-title h2 {
+        font-size: 1.4rem;
+      }
+      
+      .section-title p {
+        font-size: 0.9rem;
+      }
+      
+      .service-card h3, 
+      .package-card h3 {
+        font-size: 1.2rem;
+      }
+      
+      .service-card p {
+        font-size: 13px;
+      }
+      
+      .contact-info i {
+        margin-right: 10px;
+      }
+      
+      .logo {
+        font-size: 14px;
+      }
+      
+      header {
+        padding: 8px 0;
+      }
+      
+      nav {
+        padding: 0 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Dịch Vụ Bằng Lái Xe - Thầy Hải</div>
+        <ul class="nav-links">
+          <li><a href="#home">Trang Chủ</a></li>
+          <li><a href="#about">Giới Thiệu</a></li>
+          <li><a href="#services">Dịch Vụ</a></li>
+          <li><a href="#packages">Gói Học</a></li>
+          <li><a href="#requirements">Hồ Sơ</a></li>
+          <li><a href="#contact">Liên Hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Dịch Vụ Lái Xe Chuyên Nghiệp</h1>
+      <p>Đào tạo lái xe các hạng, cấp đổi bằng lái, đổi bằng quốc tế và cho thuê tập lái riêng.</p>
+      <a href="#contact" class="btn">Liên Hệ Ngay <i style="margin-left: 5px;">➤</i></a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>Về Chúng Tôi</h2>
+        <p>Dịch vụ hỗ trợ đăng ký học lái xe uy tín và chuyên nghiệp</p>
+      </div>
+      <div class="about-container">
+        <div class="about-content">
+          <p>Chúng tôi là đơn vị chuyên cung cấp dịch vụ hỗ trợ đăng ký học lái xe, tư vấn hồ sơ và kết nối học viên với các trường dạy lái xe uy tín hàng đầu tại TP. Hồ Chí Minh như Trường Quý Đức.</p>
+          <p>Với nhiều năm kinh nghiệm, chúng tôi sẽ giúp bạn tiết kiệm thời gian, chi phí và đảm bảo quá trình học lái xe và thi sát hạch diễn ra thuận lợi nhất.</p>
+          <p>Thầy Hải trực tiếp tư vấn và hỗ trợ bạn trong suốt quá trình từ đăng ký đến khi nhận bằng, đảm bảo mọi thủ tục diễn ra suôn sẻ và nhanh chóng.</p>
+          <a href="tel:0903785483" class="call-btn">
+            <i>📞</i> Gọi Ngay: 0903 785 483
+          </a>
+        </div>
+        <div class="about-image">
+          <img src="mrhai.jpg" alt="Dịch vụ bằng lái xe" width="100%" style="border-radius: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Dịch Vụ Của Chúng Tôi</h2>
+        <p>Chúng tôi cung cấp tất cả các dịch vụ liên quan đến bằng lái xe từ A1 đến hạng cao nhất</p>
+      </div>
+      <div class="services-container">
+        <div class="service-card">
+          <h3>Đào Tạo Dạy Lái Xe</h3>
+          <p>Dịch vụ đào tạo lái xe chuyên nghiệp từ cơ bản đến nâng cao cho tất cả các hạng bằng, với giáo viên giàu kinh nghiệm giúp bạn nhanh chóng làm chủ tay lái.</p>
+        </div>
+        <div class="service-card">
+          <h3>Cấp Đổi Mới Bằng Lái Xe</h3>
+          <p>Hỗ trợ thủ tục cấp mới, đổi bằng lái đã hết hạn, bị mất hoặc hư hỏng. Quy trình đơn giản, nhanh chóng và hợp pháp cho tất cả các hạng bằng.</p>
+        </div>
+        <div class="service-card">
+          <h3>Đổi Bằng Lái Quốc Tế</h3>
+          <p>Hỗ trợ thủ tục đổi bằng lái xe quốc tế, giúp bạn sử dụng bằng lái tại nhiều quốc gia. Hướng dẫn chuẩn bị hồ sơ và thực hiện thủ tục nhanh chóng.</p>
+        </div>
+        <div class="service-card">
+          <h3>Thuê Tập Lái Riêng</h3>
+          <p>Dịch vụ thuê xe và giáo viên tập lái riêng theo giờ với giá hợp lý. Được hướng dẫn 1 kèm 1 để nâng cao kỹ năng lái xe và tự tin trước khi thi sát hạch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="packages" id="packages">
+    <div class="container">
+      <div class="section-title">
+        <h2>Gói Học</h2>
+        <p>Chúng tôi cung cấp đào tạo tất cả các hạng bằng lái từ A1 đến hạng cao nhất</p>
+      </div>
+      <div class="package-cards">
+        <div class="package-card">
+          <h3>Gói Học Lái Xe (Các Hạng)</h3>
+          <div class="price">Liên hệ để nhận giá ưu đãi</div>
+          <ul class="feature-list">
+            <li>Đào tạo các hạng: A1, A2, B1, B2, C, D, E, F</li>
+            <li>Km chạy thực tế theo quy định DAT</li>
+            <li>Xe thực hành chất lượng cao</li>
+            <li>Học 1 kèm 1 với giáo viên giỏi</li>
+            <li>Hướng dẫn kỹ thuật lái xe an toàn</li>
+            <li>Luyện thi trên xe cảm ứng</li>
+            <li>Hỗ trợ đăng ký thi sát hạch</li>
+            <li>Cam kết giá cạnh tranh nhất</li>
+          </ul>
+          <a href="tel:0903785483" class="call-btn">📞 Gọi Ngay: 0903 785 483</a>
+        </div>
+      </div>
+      <div class="note">
+        <p><strong>Lưu ý:</strong> Học phí trên đã bao gồm phí đào tạo, không phát sinh thêm chi phí ẩn. Học viên nên đăng ký sớm để được sắp xếp lịch học phù hợp.</p>
+        <p><strong>Giá cả cạnh tranh:</strong> Vui lòng liên hệ với chúng tôi để nhận báo giá ưu đãi đặc biệt cho từng loại dịch vụ. Chúng tôi cam kết mang đến mức giá tốt nhất thị trường.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="requirements">
+    <div class="container">
+      <div class="section-title">
+        <h2>Hồ Sơ Học Lái Xe</h2>
+        <p>Các giấy tờ cần thiết để đăng ký tất cả các hạng bằng lái</p>
+      </div>
+      <div class="requirements-container">
+        <div class="requirements-content">
+          <p>Để đăng ký khóa học lái xe, bạn cần chuẩn bị các giấy tờ sau:</p>
+          <ul class="feature-list">
+            <li>Phiếu khám sức khỏe học lái xe</li>
+            <li>10 tấm hình 3x4 nền màu xanh</li>
+            <li>Photo căn cước + A1 (nếu có)</li>
+          </ul>
+          <p><strong>Địa chỉ trường hợp tác:</strong> Trường Dạy Lái Xe Quý Đức - 46 Hoa Mai, Phường 2, Quận Phú Nhuận, TP. Hồ Chí Minh</p>
+          <p>Chúng tôi sẽ hướng dẫn bạn cách chuẩn bị đầy đủ hồ sơ và hỗ trợ bạn trong suốt quá trình đăng ký học lái xe.</p>
+          <a href="tel:0903785483" class="call-btn">📞 Gọi Ngay: 0903 785 483</a>
+        </div>
+        <div class="requirements-image">
+          <img src="BÌA-1.png" alt="Hồ sơ học lái xe" width="100%" style="border-radius: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Liên Hệ Với Chúng Tôi</h2>
+        <p>Hãy liên hệ với Thầy Hải để được tư vấn chi tiết</p>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 30px;">Thông Tin Liên Hệ</h3>
+          <div>
+            <i>📞</i>
+            <p>Thầy Hải: 0903 785 483</p>
+          </div>
+          <div>
+            <i>📍</i>
+            <p>738 Trường Sa, Quận 3, TP. Hồ Chí Minh (Nhận hồ sơ từ tất cả các khu vực)</p>
+          </div>
+          <div>
+            <i>🏫</i>
+            <p>Hợp tác với Trường Dạy Lái Xe Quý Đức</p>
+          </div>
+          <div>
+            <i>💰</i>
+            <p>Liên hệ để nhận giá ưu đãi đặc biệt cho tất cả dịch vụ</p>
+          </div>
+          <a href="tel:0903785483" class="call-btn">
+            <i>📞</i> Gọi Ngay: 0903 785 483
+          </a>
+        </div>
+        <div>
+          <img src="phone_qr.png" alt="Liên hệ dịch vụ bằng lái xe" class="contact-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Dịch Vụ Bằng Lái Xe - Thầy Hải. Tất cả các quyền được bảo lưu.</p>
+    </div>
+  </footer>
+</body>
+</html>
