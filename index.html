@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+.about-content p,
+    .requirements-content p {
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #555;
+      line-height: 1.6;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      text-align: left;
+      width: 100%;
+    }<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
@@ -35,6 +45,8 @@
       line-height: 1.8;
       overflow-x: hidden;
       width: 100%;
+      max-width: 100vw;
+      position: relative;
     }
     
     header {
@@ -52,7 +64,8 @@
       width: 90%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 15px;
+      overflow: hidden;
     }
     
     .logo {
@@ -112,8 +125,9 @@
     .hero-content {
       max-width: 800px;
       margin: 0 auto;
-      padding: 40px;
+      padding: 20px;
       z-index: 1;
+      width: 100%;
     }
     
     .hero h1 {
@@ -166,19 +180,24 @@
     
     .services-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 60px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 50px;
+      padding: 0 10px;
     }
     
     .service-card {
       background: #ffffff;
       border-radius: 10px;
-      padding: 40px;
+      padding: 25px 20px;
       transition: 0.3s;
       border: 1px solid #eaeaea;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
     }
     
     .service-card:hover {
@@ -219,19 +238,21 @@
     
     .package-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
-      margin-top: 60px;
+      margin-top: 50px;
+      padding: 0 10px;
     }
     
     .package-card {
       background: #ffffff;
       border-radius: 10px;
-      padding: 40px;
+      padding: 30px 20px;
       transition: 0.3s;
       border: 1px solid #eaeaea;
       text-align: center;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      width: 100%;
     }
     
     .package-card:hover {
@@ -331,15 +352,19 @@
     
     .section-title {
       text-align: center;
-      margin-bottom: 70px;
+      margin-bottom: 50px;
+      width: 100%;
+      padding: 0 15px;
     }
     
     .section-title h2 {
-      font-size: 2.8rem;
+      font-size: 2.2rem;
       margin-bottom: 25px;
       position: relative;
       display: inline-block;
       color: var(--primary-color);
+      text-align: center;
+      width: 100%;
     }
     
     .section-title h2::after {
@@ -390,27 +415,15 @@
       font-size: 22px;
     }
     
-    .about-container {
+    .about-container,
+    .requirements-container,
+    .contact-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
       align-items: center;
-    }
-    
-    .about-content p {
-      margin-bottom: 20px;
-      font-size: 16px;
-      color: #555;
-      line-height: 1.6;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-    }
-    
-    .requirements-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      align-items: center;
+      width: 100%;
+      padding: 0 10px;
     }
     
     .requirements-content p {
@@ -421,26 +434,27 @@
     }
     
     .note {
-      margin-top: 40px;
-      padding: 20px;
+      margin-top: 30px;
+      padding: 15px;
       background: #f8f9fa;
       border-left: 4px solid var(--accent-color);
       border-radius: 5px;
-      font-size: 16px;
+      font-size: 15px;
       color: #555;
+      width: 100%;
     }
     
     @media (max-width: 992px) {
       .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
       }
       
       .hero p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
       
       .section-title h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
       
       .services-container,
@@ -457,6 +471,11 @@
         margin-top: 30px;
         max-width: 100%;
       }
+      
+      .container {
+        width: 95%;
+        padding: 0 10px;
+      }
     }
     
     @media (max-width: 768px) {
@@ -465,7 +484,7 @@
       }
       
       .hero h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
         line-height: 1.3;
       }
       
@@ -475,56 +494,7 @@
       }
       
       section {
-        padding: 60px 0;
-      }
-      
-      .section-title h2 {
-        font-size: 1.8rem;
-      }
-      
-      .service-card, .package-card {
-        padding: 25px;
-      }
-      
-      .container {
-        width: 95%;
-        padding: 0 10px;
-      }
-      
-      .hero-content {
-        padding: 20px;
-      }
-      
-      .price {
-        font-size: 1.8rem;
-      }
-      
-      .feature-list li {
-        font-size: 14px;
-      }
-      
-      .contact-info div {
-        margin-bottom: 15px;
-      }
-      
-      .call-btn {
-        padding: 12px 25px;
-        font-size: 14px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 1.7rem;
-      }
-      
-      .hero p {
-        font-size: 0.95rem;
-      }
-      
-      .btn {
-        padding: 10px 20px;
-        font-size: 14px;
+        padding: 50px 0;
       }
       
       .section-title h2 {
@@ -535,21 +505,83 @@
         font-size: 0.95rem;
       }
       
+      .service-card, .package-card {
+        padding: 20px 15px;
+      }
+      
       .service-card h3, 
       .package-card h3 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
       }
       
-      .service-card p {
+      .container {
+        width: 100%;
+        padding: 0 10px;
+      }
+      
+      .hero-content {
+        padding: 20px 15px;
+      }
+      
+      .price {
+        font-size: 1.8rem;
+      }
+      
+      .feature-list li {
         font-size: 14px;
+        padding-left: 25px;
       }
       
-      .contact-info i {
-        margin-right: 10px;
+      .contact-info div {
+        margin-bottom: 15px;
       }
       
       .contact-info p {
         font-size: 14px;
+      }
+      
+      .call-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+      
+      .hero p {
+        font-size: 0.9rem;
+      }
+      
+      .btn {
+        padding: 10px 15px;
+        font-size: 14px;
+        width: 100%;
+      }
+      
+      .section-title h2 {
+        font-size: 1.4rem;
+      }
+      
+      .section-title p {
+        font-size: 0.9rem;
+      }
+      
+      .service-card h3, 
+      .package-card h3 {
+        font-size: 1.2rem;
+      }
+      
+      .service-card p {
+        font-size: 13px;
+      }
+      
+      .contact-info i {
+        margin-right: 10px;
       }
     }
   </style>
@@ -572,9 +604,9 @@
   </header>
 
   <section class="hero" id="home">
-    <div class="hero-content">
+          <div class="hero-content">
       <h1>Dịch Vụ Đào Tạo Lái Xe Chuyên Nghiệp</h1>
-      <p>Chúng tôi cung cấp dịch vụ hỗ trợ đăng ký học lái xe, tư vấn và hướng dẫn hoàn thiện hồ sơ, giúp bạn dễ dàng sở hữu bằng lái xe.</p>
+      <p>Đào tạo lái xe các hạng, cấp đổi mới bằng lái, đổi bằng quốc tế và cho thuê tập lái riêng với giá cạnh tranh nhất.</p>
       <a href="#contact" class="btn">Liên Hệ Ngay</a>
     </div>
   </section>
@@ -610,19 +642,19 @@
       <div class="services-container">
         <div class="service-card">
           <h3>Đào Tạo Dạy Lái Xe</h3>
-          <p>Chúng tôi cung cấp dịch vụ đào tạo lái xe chuyên nghiệp từ cơ bản đến nâng cao cho tất cả các hạng bằng. Với đội ngũ giáo viên giàu kinh nghiệm, chúng tôi giúp bạn nhanh chóng làm chủ tay lái và tự tin trên mọi cung đường.</p>
+          <p>Dịch vụ đào tạo lái xe chuyên nghiệp từ cơ bản đến nâng cao cho tất cả các hạng bằng, với giáo viên giàu kinh nghiệm giúp bạn nhanh chóng làm chủ tay lái.</p>
         </div>
         <div class="service-card">
           <h3>Cấp Đổi Mới Bằng Lái Xe</h3>
-          <p>Hỗ trợ thủ tục cấp mới, đổi bằng lái xe đã hết hạn, bị mất, hư hỏng hoặc đổi từ bằng giấy sang bằng thẻ PET. Quy trình đơn giản, nhanh chóng và đảm bảo hợp pháp cho tất cả các hạng bằng.</p>
+          <p>Hỗ trợ thủ tục cấp mới, đổi bằng lái đã hết hạn, bị mất hoặc hư hỏng. Quy trình đơn giản, nhanh chóng và hợp pháp cho tất cả các hạng bằng.</p>
         </div>
         <div class="service-card">
           <h3>Đổi Bằng Lái Quốc Tế</h3>
-          <p>Hỗ trợ thủ tục đổi bằng lái xe quốc tế, giúp bạn có thể sử dụng bằng lái của mình tại nhiều quốc gia trên thế giới. Chúng tôi hướng dẫn bạn chuẩn bị hồ sơ và thực hiện các thủ tục cần thiết một cách nhanh chóng.</p>
+          <p>Hỗ trợ thủ tục đổi bằng lái xe quốc tế, giúp bạn sử dụng bằng lái tại nhiều quốc gia. Hướng dẫn chuẩn bị hồ sơ và thực hiện thủ tục nhanh chóng.</p>
         </div>
         <div class="service-card">
           <h3>Thuê Tập Lái Riêng</h3>
-          <p>Dịch vụ thuê xe và giáo viên tập lái riêng theo giờ với mức giá hợp lý. Bạn sẽ được hướng dẫn 1 kèm 1 để nâng cao kỹ năng lái xe và tự tin hơn trước khi thi sát hạch. Xe được bảo dưỡng thường xuyên, đảm bảo an toàn.</p>
+          <p>Dịch vụ thuê xe và giáo viên tập lái riêng theo giờ với giá hợp lý. Được hướng dẫn 1 kèm 1 để nâng cao kỹ năng lái xe và tự tin trước khi thi sát hạch.</p>
         </div>
       </div>
     </div>
