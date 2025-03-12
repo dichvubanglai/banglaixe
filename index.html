@@ -8,6 +8,12 @@
       overflow-wrap: break-word;
       text-align: left;
       width: 100%;
+    }
+    
+    /* Fix for CSS showing in the header */
+    .css-fix::before {
+      content: none !important;
+      display: none !important;
     }<!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -69,8 +75,11 @@
     }
     
     .logo {
-      font-size: 24px;
+      font-size: 18px;
       font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     
     nav {
@@ -546,6 +555,14 @@
         width: 100%;
         max-width: 100%;
       }
+      
+      .logo {
+        font-size: 16px;
+      }
+      
+      header {
+        padding: 10px 0;
+      }
     }
     
     @media (max-width: 480px) {
@@ -583,6 +600,18 @@
       .contact-info i {
         margin-right: 10px;
       }
+      
+      .logo {
+        font-size: 14px;
+      }
+      
+      header {
+        padding: 8px 0;
+      }
+      
+      nav {
+        padding: 0 5px;
+      }
     }
   </style>
 </head>
@@ -605,8 +634,8 @@
 
   <section class="hero" id="home">
           <div class="hero-content">
-      <h1>Dịch Vụ Đào Tạo Lái Xe Chuyên Nghiệp</h1>
-      <p>Đào tạo lái xe các hạng, cấp đổi mới bằng lái, đổi bằng quốc tế và cho thuê tập lái riêng với giá cạnh tranh nhất.</p>
+      <h1>Dịch Vụ Lái Xe Chuyên Nghiệp</h1>
+      <p>Đào tạo lái xe các hạng, cấp đổi bằng lái, đổi bằng quốc tế và cho thuê tập lái riêng.</p>
       <a href="#contact" class="btn">Liên Hệ Ngay</a>
     </div>
   </section>
