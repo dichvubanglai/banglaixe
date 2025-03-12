@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dịch Vụ Bằng Lái Xe - Thầy Hải</title>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
     :root {
       --primary-color: #003366;
       --secondary-color: #001a33;
@@ -27,6 +33,8 @@
       background-color: #ffffff;
       color: var(--text-color);
       line-height: 1.8;
+      overflow-x: hidden;
+      width: 100%;
     }
     
     header {
@@ -158,8 +166,8 @@
     
     .services-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
       margin-top: 60px;
     }
     
@@ -198,8 +206,10 @@
     
     .service-card p {
       color: #666;
-      line-height: 1.8;
+      line-height: 1.6;
       font-size: 16px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     
     .packages {
@@ -209,8 +219,8 @@
     
     .package-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
       margin-top: 60px;
     }
     
@@ -254,6 +264,8 @@
       position: relative;
       color: #555;
       font-size: 16px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     
     .feature-list li::before {
@@ -271,8 +283,8 @@
     
     .contact-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 60px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
       align-items: center;
     }
     
@@ -298,11 +310,15 @@
       color: #555;
     }
     
-    .contact-image {
+    .contact-image,
+    .about-image,
+    .requirements-image {
       width: 100%;
-      max-width: 500px;
+      max-width: 100%;
       border-radius: 10px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      height: auto;
+      object-fit: cover;
     }
     
     footer {
@@ -348,6 +364,7 @@
     .call-btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       background: var(--btn-color);
       color: white;
       padding: 14px 30px;
@@ -357,6 +374,9 @@
       transition: 0.3s;
       margin-top: 30px;
       font-size: 16px;
+      text-align: center;
+      width: auto;
+      min-width: 200px;
     }
     
     .call-btn:hover {
@@ -372,8 +392,8 @@
     
     .about-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 60px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
       align-items: center;
     }
     
@@ -381,13 +401,15 @@
       margin-bottom: 20px;
       font-size: 16px;
       color: #555;
-      line-height: 1.8;
+      line-height: 1.6;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     
     .requirements-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 60px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
       align-items: center;
     }
     
@@ -410,7 +432,7 @@
     
     @media (max-width: 992px) {
       .hero h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
       }
       
       .hero p {
@@ -418,7 +440,22 @@
       }
       
       .section-title h2 {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
+      }
+      
+      .services-container,
+      .package-cards,
+      .about-container,
+      .requirements-container,
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-image,
+      .about-image,
+      .requirements-image {
+        margin-top: 30px;
+        max-width: 100%;
       }
     }
     
@@ -428,23 +465,91 @@
       }
       
       .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        line-height: 1.3;
       }
       
       .hero p {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        line-height: 1.5;
       }
       
       section {
-        padding: 70px 0;
+        padding: 60px 0;
       }
       
       .section-title h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
       
       .service-card, .package-card {
-        padding: 30px;
+        padding: 25px;
+      }
+      
+      .container {
+        width: 95%;
+        padding: 0 10px;
+      }
+      
+      .hero-content {
+        padding: 20px;
+      }
+      
+      .price {
+        font-size: 1.8rem;
+      }
+      
+      .feature-list li {
+        font-size: 14px;
+      }
+      
+      .contact-info div {
+        margin-bottom: 15px;
+      }
+      
+      .call-btn {
+        padding: 12px 25px;
+        font-size: 14px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      
+      .hero p {
+        font-size: 0.95rem;
+      }
+      
+      .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+      
+      .section-title h2 {
+        font-size: 1.6rem;
+      }
+      
+      .section-title p {
+        font-size: 0.95rem;
+      }
+      
+      .service-card h3, 
+      .package-card h3 {
+        font-size: 1.3rem;
+      }
+      
+      .service-card p {
+        font-size: 14px;
+      }
+      
+      .contact-info i {
+        margin-right: 10px;
+      }
+      
+      .contact-info p {
+        font-size: 14px;
       }
     }
   </style>
@@ -504,28 +609,20 @@
       </div>
       <div class="services-container">
         <div class="service-card">
-          <h3>Tư Vấn Đăng Ký Học Lái Xe</h3>
-          <p>Chúng tôi tư vấn và giúp bạn đăng ký khóa học lái xe phù hợp với nhu cầu và thời gian của bạn tại các trường uy tín. Đội ngũ tư vấn nhiều kinh nghiệm sẽ giúp bạn lựa chọn khóa học phù hợp nhất.</p>
+          <h3>Đào Tạo Dạy Lái Xe</h3>
+          <p>Chúng tôi cung cấp dịch vụ đào tạo lái xe chuyên nghiệp từ cơ bản đến nâng cao cho tất cả các hạng bằng. Với đội ngũ giáo viên giàu kinh nghiệm, chúng tôi giúp bạn nhanh chóng làm chủ tay lái và tự tin trên mọi cung đường.</p>
         </div>
         <div class="service-card">
-          <h3>Hỗ Trợ Hồ Sơ</h3>
-          <p>Hướng dẫn chuẩn bị đầy đủ hồ sơ theo quy định, đảm bảo hồ sơ của bạn được xử lý nhanh chóng và chính xác. Chúng tôi giúp bạn tránh những sai sót thường gặp trong quá trình chuẩn bị hồ sơ.</p>
-        </div>
-        <div class="service-card">
-          <h3>Đổi Bằng Lái Xe</h3>
-          <p>Chúng tôi hỗ trợ các thủ tục đổi bằng lái xe đã hết hạn, bị mất, hư hỏng hoặc đổi từ bằng giấy sang bằng thẻ PET. Quy trình đơn giản, nhanh chóng và đảm bảo hợp pháp.</p>
-        </div>
-        <div class="service-card">
-          <h3>Cấp Mới Bằng Lái Xe</h3>
-          <p>Hỗ trợ thủ tục cấp mới bằng lái xe các hạng từ A1 đến hạng cao nhất. Chúng tôi hướng dẫn bạn chuẩn bị hồ sơ và hoàn thiện các yêu cầu để được cấp bằng mới một cách thuận lợi.</p>
+          <h3>Cấp Đổi Mới Bằng Lái Xe</h3>
+          <p>Hỗ trợ thủ tục cấp mới, đổi bằng lái xe đã hết hạn, bị mất, hư hỏng hoặc đổi từ bằng giấy sang bằng thẻ PET. Quy trình đơn giản, nhanh chóng và đảm bảo hợp pháp cho tất cả các hạng bằng.</p>
         </div>
         <div class="service-card">
           <h3>Đổi Bằng Lái Quốc Tế</h3>
-          <p>Hỗ trợ thủ tục đổi bằng lái xe quốc tế, giúp bạn có thể sử dụng bằng lái của mình tại nhiều quốc gia trên thế giới. Chúng tôi hướng dẫn bạn chuẩn bị hồ sơ và thực hiện các thủ tục cần thiết.</p>
+          <p>Hỗ trợ thủ tục đổi bằng lái xe quốc tế, giúp bạn có thể sử dụng bằng lái của mình tại nhiều quốc gia trên thế giới. Chúng tôi hướng dẫn bạn chuẩn bị hồ sơ và thực hiện các thủ tục cần thiết một cách nhanh chóng.</p>
         </div>
         <div class="service-card">
-          <h3>Thuê Xe Tập Lái Theo Giờ</h3>
-          <p>Cung cấp dịch vụ thuê xe tập lái theo giờ với giá cả hợp lý, giúp bạn có thêm thời gian thực hành và trau dồi kỹ năng lái xe. Xe được bảo dưỡng thường xuyên, đảm bảo an toàn cho học viên.</p>
+          <h3>Thuê Tập Lái Riêng</h3>
+          <p>Dịch vụ thuê xe và giáo viên tập lái riêng theo giờ với mức giá hợp lý. Bạn sẽ được hướng dẫn 1 kèm 1 để nâng cao kỹ năng lái xe và tự tin hơn trước khi thi sát hạch. Xe được bảo dưỡng thường xuyên, đảm bảo an toàn.</p>
         </div>
       </div>
     </div>
@@ -542,14 +639,14 @@
           <h3>Gói Học Lái Xe (Các Hạng)</h3>
           <div class="price">Liên hệ để nhận giá ưu đãi</div>
           <ul class="feature-list">
-            <li>Đào tạo tất cả các hạng bằng: A1, A2, B1, B2, C, D, E, F</li>
-            <li>Tổng số 1.000 km chạy thực tế theo quy định DAT</li>
-            <li>Xe thực hành: Xe nhà, đảm bảo chất lượng</li>
-            <li>Học thực hành 1 kèm 1 với giáo viên kinh nghiệm</li>
+            <li>Đào tạo các hạng: A1, A2, B1, B2, C, D, E, F</li>
+            <li>Km chạy thực tế theo quy định DAT</li>
+            <li>Xe thực hành chất lượng cao</li>
+            <li>Học 1 kèm 1 với giáo viên giỏi</li>
             <li>Hướng dẫn kỹ thuật lái xe an toàn</li>
-            <li>Học và thi thử trên xe cảm ứng</li>
-            <li>Hỗ trợ đăng ký thi sát hạch và cấp bằng</li>
-            <li>Cam kết giá cạnh tranh nhất thị trường</li>
+            <li>Luyện thi trên xe cảm ứng</li>
+            <li>Hỗ trợ đăng ký thi sát hạch</li>
+            <li>Cam kết giá cạnh tranh nhất</li>
           </ul>
           <a href="tel:0903785483" class="call-btn">📞 Gọi Ngay: 0903 785 483</a>
         </div>
