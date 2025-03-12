@@ -9,9 +9,11 @@
       --primary-color: #003366;
       --secondary-color: #001a33;
       --accent-color: #0066cc;
-      --text-color: #ffffff;
-      --light-text: #e6e6e6;
-      --section-bg: rgba(0, 26, 51, 0.9);
+      --text-color: #333333;
+      --section-dark-bg: #f8f9fa;
+      --section-light-bg: #ffffff;
+      --btn-color: #28a745;
+      --btn-hover: #218838;
     }
     
     * {
@@ -22,20 +24,20 @@
     }
     
     body {
-      background-color: #f5f5f5;
-      color: #333;
-      line-height: 1.6;
+      background-color: #ffffff;
+      color: var(--text-color);
+      line-height: 1.8;
     }
     
     header {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      color: var(--text-color);
+      color: #ffffff;
       padding: 20px 0;
       position: fixed;
       width: 100%;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
     
     .container {
@@ -66,10 +68,11 @@
     }
     
     .nav-links a {
-      color: var(--text-color);
+      color: #ffffff;
       text-decoration: none;
       font-weight: 500;
       transition: 0.3s;
+      font-size: 16px;
     }
     
     .nav-links a:hover {
@@ -82,8 +85,10 @@
       display: flex;
       align-items: center;
       text-align: center;
-      color: var(--text-color);
+      color: #ffffff;
       position: relative;
+      margin-top: 0;
+      padding-top: 80px;
     }
     
     .hero::after {
@@ -99,149 +104,176 @@
     .hero-content {
       max-width: 800px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 40px;
       z-index: 1;
     }
     
     .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
+      font-size: 3.5rem;
+      margin-bottom: 30px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      line-height: 1.2;
     }
     
     .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
+      font-size: 1.4rem;
+      margin-bottom: 40px;
+      line-height: 1.6;
     }
     
     .btn {
       display: inline-block;
-      background: var(--accent-color);
-      color: var(--text-color);
-      padding: 12px 30px;
+      background: var(--btn-color);
+      color: #ffffff;
+      padding: 14px 34px;
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s;
       border: none;
       cursor: pointer;
+      font-size: 16px;
+      letter-spacing: 0.5px;
     }
     
     .btn:hover {
-      background: #0055aa;
+      background: var(--btn-hover);
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+      box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
     }
     
     section {
-      padding: 80px 0;
+      padding: 100px 0;
     }
     
     .about {
-      background: var(--section-bg);
+      background: var(--section-light-bg);
       color: var(--text-color);
     }
     
     .services {
-      background: var(--section-bg);
+      background: var(--section-dark-bg);
       color: var(--text-color);
     }
     
     .services-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
     }
     
     .service-card {
-      background: rgba(255, 255, 255, 0.1);
+      background: #ffffff;
       border-radius: 10px;
-      padding: 30px;
+      padding: 40px;
       transition: 0.3s;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid #eaeaea;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      height: 100%;
     }
     
     .service-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
     
     .service-card h3 {
-      margin-bottom: 15px;
-      font-size: 1.5rem;
-      color: #00ccff;
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+      color: var(--primary-color);
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .service-card h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--accent-color);
+    }
+    
+    .service-card p {
+      color: #666;
+      line-height: 1.8;
+      font-size: 16px;
     }
     
     .packages {
-      background: var(--section-bg);
+      background: var(--section-light-bg);
       color: var(--text-color);
     }
     
     .package-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
     }
     
     .package-card {
-      background: rgba(255, 255, 255, 0.1);
+      background: #ffffff;
       border-radius: 10px;
-      padding: 30px;
+      padding: 40px;
       transition: 0.3s;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid #eaeaea;
       text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     }
     
     .package-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
     
     .package-card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      color: #00ccff;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--primary-color);
     }
     
     .price {
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: bold;
-      margin: 20px 0;
-      color: #ffffff;
+      margin: 30px 0;
+      color: var(--accent-color);
     }
     
     .feature-list {
       list-style: none;
       text-align: left;
-      margin-bottom: 25px;
+      margin-bottom: 35px;
     }
     
     .feature-list li {
-      margin-bottom: 10px;
-      padding-left: 25px;
+      margin-bottom: 15px;
+      padding-left: 30px;
       position: relative;
+      color: #555;
+      font-size: 16px;
     }
     
     .feature-list li::before {
       content: '✓';
       position: absolute;
       left: 0;
-      color: #00ccff;
+      color: var(--btn-color);
+      font-weight: bold;
     }
     
     .contact {
-      background: var(--section-bg);
+      background: var(--section-dark-bg);
       color: var(--text-color);
     }
     
     .contact-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 60px;
+      align-items: center;
     }
     
     .contact-info {
@@ -251,74 +283,143 @@
     .contact-info div {
       display: flex;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
     
     .contact-info i {
-      margin-right: 15px;
-      font-size: 20px;
-      color: #00ccff;
+      margin-right: 20px;
+      font-size: 24px;
+      color: var(--accent-color);
+      width: 30px;
+    }
+    
+    .contact-info p {
+      font-size: 18px;
+      color: #555;
+    }
+    
+    .contact-image {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
     
     footer {
       background: var(--secondary-color);
-      color: var(--text-color);
+      color: #ffffff;
       text-align: center;
-      padding: 20px 0;
-      font-size: 0.9rem;
+      padding: 30px 0;
+      font-size: 16px;
     }
     
     .section-title {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 70px;
     }
     
     .section-title h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+      font-size: 2.8rem;
+      margin-bottom: 25px;
       position: relative;
       display: inline-block;
+      color: var(--primary-color);
     }
     
     .section-title h2::after {
       content: '';
       position: absolute;
-      bottom: -10px;
+      bottom: -15px;
       left: 50%;
       transform: translateX(-50%);
-      width: 80px;
+      width: 100px;
       height: 4px;
-      background: #00ccff;
+      background: var(--accent-color);
     }
     
     .section-title p {
-      color: var(--light-text);
+      color: #666;
       max-width: 700px;
-      margin: 0 auto;
+      margin: 20px auto 0;
+      font-size: 18px;
+      line-height: 1.6;
     }
     
     .call-btn {
       display: inline-flex;
       align-items: center;
-      background: #25d366;
+      background: var(--btn-color);
       color: white;
-      padding: 12px 25px;
+      padding: 14px 30px;
       border-radius: 50px;
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s;
-      margin-top: 20px;
+      margin-top: 30px;
+      font-size: 16px;
     }
     
     .call-btn:hover {
-      background: #128C7E;
+      background: var(--btn-hover);
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+      box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
     }
     
     .call-btn i {
-      margin-right: 10px;
-      font-size: 20px;
+      margin-right: 15px;
+      font-size: 22px;
+    }
+    
+    .about-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .about-content p {
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #555;
+      line-height: 1.8;
+    }
+    
+    .requirements-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .requirements-content p {
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #555;
+      line-height: 1.8;
+    }
+    
+    .note {
+      margin-top: 40px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-left: 4px solid var(--accent-color);
+      border-radius: 5px;
+      font-size: 16px;
+      color: #555;
+    }
+    
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      
+      .hero p {
+        font-size: 1.2rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2.4rem;
+      }
     }
     
     @media (max-width: 768px) {
@@ -327,15 +428,23 @@
       }
       
       .hero h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
       
       .hero p {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
       
       section {
-        padding: 60px 0;
+        padding: 70px 0;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .service-card, .package-card {
+        padding: 30px;
       }
     }
   </style>
@@ -371,8 +480,19 @@
         <h2>Về Chúng Tôi</h2>
         <p>Dịch vụ hỗ trợ đăng ký học lái xe uy tín và chuyên nghiệp</p>
       </div>
-      <p>Chúng tôi là đơn vị chuyên cung cấp dịch vụ hỗ trợ đăng ký học lái xe, tư vấn hồ sơ và kết nối học viên với các trường dạy lái xe uy tín hàng đầu tại TP. Hồ Chí Minh như Trường Quý Đức.</p>
-      <p>Với nhiều năm kinh nghiệm, chúng tôi sẽ giúp bạn tiết kiệm thời gian, chi phí và đảm bảo quá trình học lái xe và thi sát hạch diễn ra thuận lợi nhất. Thầy Hải trực tiếp tư vấn và hỗ trợ bạn trong suốt quá trình từ đăng ký đến khi nhận bằng.</p>
+      <div class="about-container">
+        <div class="about-content">
+          <p>Chúng tôi là đơn vị chuyên cung cấp dịch vụ hỗ trợ đăng ký học lái xe, tư vấn hồ sơ và kết nối học viên với các trường dạy lái xe uy tín hàng đầu tại TP. Hồ Chí Minh như Trường Quý Đức.</p>
+          <p>Với nhiều năm kinh nghiệm, chúng tôi sẽ giúp bạn tiết kiệm thời gian, chi phí và đảm bảo quá trình học lái xe và thi sát hạch diễn ra thuận lợi nhất.</p>
+          <p>Thầy Hải trực tiếp tư vấn và hỗ trợ bạn trong suốt quá trình từ đăng ký đến khi nhận bằng, đảm bảo mọi thủ tục diễn ra suôn sẻ và nhanh chóng.</p>
+          <a href="tel:0903785483" class="call-btn">
+            <i>📞</i> Gọi Ngay: 0903 785 483
+          </a>
+        </div>
+        <div class="about-image">
+          <img src="/api/placeholder/600/400" alt="Dịch vụ bằng lái xe" width="100%" style="border-radius: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -385,27 +505,27 @@
       <div class="services-container">
         <div class="service-card">
           <h3>Tư Vấn Đăng Ký Học Lái Xe</h3>
-          <p>Chúng tôi tư vấn và giúp bạn đăng ký khóa học lái xe phù hợp với nhu cầu và thời gian của bạn tại các trường uy tín.</p>
+          <p>Chúng tôi tư vấn và giúp bạn đăng ký khóa học lái xe phù hợp với nhu cầu và thời gian của bạn tại các trường uy tín. Đội ngũ tư vấn nhiều kinh nghiệm sẽ giúp bạn lựa chọn khóa học phù hợp nhất.</p>
         </div>
         <div class="service-card">
           <h3>Hỗ Trợ Hồ Sơ</h3>
-          <p>Hướng dẫn chuẩn bị đầy đủ hồ sơ theo quy định, đảm bảo hồ sơ của bạn được xử lý nhanh chóng và chính xác.</p>
+          <p>Hướng dẫn chuẩn bị đầy đủ hồ sơ theo quy định, đảm bảo hồ sơ của bạn được xử lý nhanh chóng và chính xác. Chúng tôi giúp bạn tránh những sai sót thường gặp trong quá trình chuẩn bị hồ sơ.</p>
         </div>
         <div class="service-card">
           <h3>Hỗ Trợ Thi Lý Thuyết</h3>
-          <p>Cung cấp tài liệu ôn tập và mẹo thi lý thuyết hiệu quả, giúp bạn dễ dàng vượt qua phần thi lý thuyết.</p>
+          <p>Cung cấp tài liệu ôn tập và mẹo thi lý thuyết hiệu quả, giúp bạn dễ dàng vượt qua phần thi lý thuyết. Đội ngũ giáo viên kinh nghiệm sẽ hướng dẫn bạn ôn tập đúng trọng tâm.</p>
         </div>
         <div class="service-card">
           <h3>Hướng Dẫn Thi Thực Hành</h3>
-          <p>Kết nối bạn với giáo viên kinh nghiệm để luyện tập và hướng dẫn các kỹ thuật thi thực hành hiệu quả.</p>
+          <p>Kết nối bạn với giáo viên kinh nghiệm để luyện tập và hướng dẫn các kỹ thuật thi thực hành hiệu quả. Chúng tôi giúp bạn làm quen với các tình huống trong bài thi và cách xử lý chính xác.</p>
         </div>
         <div class="service-card">
           <h3>Đổi Bằng Lái Quốc Tế</h3>
-          <p>Hỗ trợ thủ tục đổi bằng lái xe quốc tế, giúp bạn có thể sử dụng bằng lái của mình tại nhiều quốc gia trên thế giới.</p>
+          <p>Hỗ trợ thủ tục đổi bằng lái xe quốc tế, giúp bạn có thể sử dụng bằng lái của mình tại nhiều quốc gia trên thế giới. Chúng tôi hướng dẫn bạn chuẩn bị hồ sơ và thực hiện các thủ tục cần thiết.</p>
         </div>
         <div class="service-card">
           <h3>Thuê Xe Tập Lái Theo Giờ</h3>
-          <p>Cung cấp dịch vụ thuê xe tập lái theo giờ với giá cả hợp lý, giúp bạn có thêm thời gian thực hành và trau dồi kỹ năng lái xe.</p>
+          <p>Cung cấp dịch vụ thuê xe tập lái theo giờ với giá cả hợp lý, giúp bạn có thêm thời gian thực hành và trau dồi kỹ năng lái xe. Xe được bảo dưỡng thường xuyên, đảm bảo an toàn cho học viên.</p>
         </div>
       </div>
     </div>
@@ -433,8 +553,8 @@
           <a href="tel:0903785483" class="call-btn">📞 Gọi Ngay: 0903 785 483</a>
         </div>
       </div>
-      <div class="section-title" style="margin-top: 40px;">
-        <p>Lưu ý: Học phí trên đã bao gồm phí đào tạo, không phát sinh thêm chi phí ẩn. Học viên nên đăng ký sớm để được sắp xếp lịch học phù hợp.</p>
+      <div class="note">
+        <p><strong>Lưu ý:</strong> Học phí trên đã bao gồm phí đào tạo, không phát sinh thêm chi phí ẩn. Học viên nên đăng ký sớm để được sắp xếp lịch học phù hợp.</p>
       </div>
     </div>
   </section>
@@ -445,13 +565,22 @@
         <h2>Hồ Sơ Học Lái Xe</h2>
         <p>Các giấy tờ cần thiết để đăng ký khóa học lái xe</p>
       </div>
-      <p>Để đăng ký khóa học lái xe, bạn cần chuẩn bị các giấy tờ sau:</p>
-      <ul class="feature-list">
-        <li>Phiếu khám sức khỏe học lái xe</li>
-        <li>10 tấm hình 3x4 nền màu xanh</li>
-        <li>Photo căn cước + A1 (nếu có)</li>
-      </ul>
-      <p><strong>Địa chỉ trường hợp tác:</strong> Trường Dạy Lái Xe Quý Đức - 46 Hoa Mai, Phường 2, Quận Phú Nhuận, TP. Hồ Chí Minh</p>
+      <div class="requirements-container">
+        <div class="requirements-content">
+          <p>Để đăng ký khóa học lái xe, bạn cần chuẩn bị các giấy tờ sau:</p>
+          <ul class="feature-list">
+            <li>Phiếu khám sức khỏe học lái xe</li>
+            <li>10 tấm hình 3x4 nền màu xanh</li>
+            <li>Photo căn cước + A1 (nếu có)</li>
+          </ul>
+          <p><strong>Địa chỉ trường hợp tác:</strong> Trường Dạy Lái Xe Quý Đức - 46 Hoa Mai, Phường 2, Quận Phú Nhuận, TP. Hồ Chí Minh</p>
+          <p>Chúng tôi sẽ hướng dẫn bạn cách chuẩn bị đầy đủ hồ sơ và hỗ trợ bạn trong suốt quá trình đăng ký học lái xe.</p>
+          <a href="tel:0903785483" class="call-btn">📞 Gọi Ngay: 0903 785 483</a>
+        </div>
+        <div class="requirements-image">
+          <img src="/api/placeholder/600/400" alt="Hồ sơ học lái xe" width="100%" style="border-radius: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -463,7 +592,7 @@
       </div>
       <div class="contact-container">
         <div class="contact-info">
-          <h3>Thông Tin Liên Hệ</h3>
+          <h3 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 30px;">Thông Tin Liên Hệ</h3>
           <div>
             <i>📞</i>
             <p>Thầy Hải: 0903 785 483</p>
@@ -479,6 +608,9 @@
           <a href="tel:0903785483" class="call-btn">
             <i>📞</i> Gọi Ngay: 0903 785 483
           </a>
+        </div>
+        <div>
+          <img src="/api/placeholder/600/400" alt="Liên hệ dịch vụ bằng lái xe" class="contact-image">
         </div>
       </div>
     </div>
