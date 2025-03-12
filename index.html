@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trường Dạy Lái Xe Quý Đức - Đào Tạo Lái Xe Chuyên Nghiệp</title>
+  <style>
+    :root {
+      --primary-color: #003366;
+      --secondary-color: #001a33;
+      --accent-color: #0066cc;
+      --text-color: #ffffff;
+      --light-text: #e6e6e6;
+      --section-bg: rgba(0, 26, 51, 0.9);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--text-color);
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 30px;
+    }
+    
+    .nav-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: #00ccff;
+    }
+    
+    .hero {
+      background: url('/api/placeholder/1200/600') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: var(--text-color);
+      position: relative;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 26, 51, 0.7);
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      z-index: 1;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: var(--accent-color);
+      color: var(--text-color);
+      padding: 12px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      background: #0055aa;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+    }
+    
+    section {
+      padding: 80px 0;
+    }
+    
+    .about {
+      background: var(--section-bg);
+      color: var(--text-color);
+    }
+    
+    .services {
+      background: var(--section-bg);
+      color: var(--text-color);
+    }
+    
+    .services-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .service-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 30px;
+      transition: 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .service-card h3 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      color: #00ccff;
+    }
+    
+    .packages {
+      background: var(--section-bg);
+      color: var(--text-color);
+    }
+    
+    .package-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .package-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 30px;
+      transition: 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+    }
+    
+    .package-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .package-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #00ccff;
+    }
+    
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #ffffff;
+    }
+    
+    .feature-list {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 25px;
+    }
+    
+    .feature-list li {
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
+    }
+    
+    .feature-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #00ccff;
+    }
+    
+    .contact {
+      background: var(--section-bg);
+      color: var(--text-color);
+    }
+    
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 50px;
+    }
+    
+    .contact-info {
+      margin-bottom: 40px;
+    }
+    
+    .contact-info div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .contact-info i {
+      margin-right: 15px;
+      font-size: 20px;
+      color: #00ccff;
+    }
+    
+    form input, form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-color);
+    }
+    
+    form input:focus, form textarea:focus {
+      outline: none;
+      border-color: #00ccff;
+    }
+    
+    form textarea {
+      height: 150px;
+      resize: none;
+    }
+    
+    footer {
+      background: var(--secondary-color);
+      color: var(--text-color);
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9rem;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: #00ccff;
+    }
+    
+    .section-title p {
+      color: var(--light-text);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      section {
+        padding: 60px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Trường Dạy Lái Xe Quý Đức</div>
+        <ul class="nav-links">
+          <li><a href="#home">Trang Chủ</a></li>
+          <li><a href="#about">Giới Thiệu</a></li>
+          <li><a href="#services">Dịch Vụ</a></li>
+          <li><a href="#packages">Gói Học</a></li>
+          <li><a href="#requirements">Hồ Sơ</a></li>
+          <li><a href="#contact">Liên Hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Đào Tạo Lái Xe Chuyên Nghiệp</h1>
+      <p>Chúng tôi cung cấp dịch vụ đào tạo lái xe chất lượng cao với đội ngũ giáo viên dày kinh nghiệm, giúp bạn tự tin làm chủ tay lái.</p>
+      <a href="#contact" class="btn">Liên Hệ Ngay</a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>Về Chúng Tôi</h2>
+        <p>Trường Dạy Lái Xe Quý Đức - Đơn vị uy tín trong lĩnh vực đào tạo lái xe</p>
+      </div>
+      <p>Với nhiều năm kinh nghiệm trong lĩnh vực đào tạo lái xe, chúng tôi tự hào mang đến cho học viên những khóa học chất lượng cao, đảm bảo an toàn và hiệu quả. Đội ngũ giáo viên giàu kinh nghiệm của chúng tôi sẽ hướng dẫn bạn từ những kỹ năng cơ bản đến nâng cao, giúp bạn tự tin làm chủ tay lái trong mọi tình huống.</p>
+      <p>Chúng tôi cam kết đào tạo học viên với phương pháp hiện đại, tập trung vào thực hành và đảm bảo học viên đạt kết quả tốt trong kỳ thi sát hạch.</p>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Dịch Vụ Của Chúng Tôi</h2>
+        <p>Chúng tôi cung cấp đa dạng các dịch vụ liên quan đến bằng lái xe</p>
+      </div>
+      <div class="services-container">
+        <div class="service-card">
+          <h3>Đào Tạo Lái Xe</h3>
+          <p>Chúng tôi cung cấp các khóa học lái xe chất lượng cao với giáo viên dày kinh nghiệm, giúp bạn nhanh chóng làm chủ tay lái và tự tin trên mọi cung đường.</p>
+        </div>
+        <div class="service-card">
+          <h3>Hỗ Trợ Thi Lý Thuyết</h3>
+          <p>Đội ngũ giáo viên sẽ hướng dẫn bạn ôn tập kiến thức lý thuyết, giải đáp mọi thắc mắc và cung cấp các bí quyết để vượt qua kỳ thi lý thuyết một cách dễ dàng.</p>
+        </div>
+        <div class="service-card">
+          <h3>Hướng Dẫn Thi Thực Hành</h3>
+          <p>Chúng tôi sẽ cùng bạn luyện tập trên sân thi thực tế, hướng dẫn các kỹ thuật và mẹo để vượt qua bài thi thực hành với kết quả cao nhất.</p>
+        </div>
+        <div class="service-card">
+          <h3>Đổi Bằng Lái Quốc Tế</h3>
+          <p>Chúng tôi hỗ trợ thủ tục đổi bằng lái xe quốc tế, giúp bạn có thể sử dụng bằng lái của mình tại nhiều quốc gia trên thế giới.</p>
+        </div>
+        <div class="service-card">
+          <h3>Thuê Xe Tập Lái Theo Giờ</h3>
+          <p>Dịch vụ cho thuê xe tập lái theo giờ với giá cả hợp lý, giúp bạn có thêm thời gian thực hành và trau dồi kỹ năng lái xe của mình.</p>
+        </div>
+        <div class="service-card">
+          <h3>Tư Vấn Hồ Sơ</h3>
+          <p>Chúng tôi cung cấp dịch vụ tư vấn và hỗ trợ chuẩn bị hồ sơ đầy đủ, chính xác theo quy định của cơ quan quản lý.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="packages" id="packages">
+    <div class="container">
+      <div class="section-title">
+        <h2>Gói Học</h2>
+        <p>Chúng tôi cung cấp các gói học phù hợp với nhu cầu của bạn</p>
+      </div>
+      <div class="package-cards">
+        <div class="package-card">
+          <h3>Gói Học Lái Xe B2</h3>
+          <div class="price">21.000.000 VNĐ</div>
+          <ul class="feature-list">
+            <li>Tổng số 1.000 km chạy thực tế theo quy định DAT</li>
+            <li>Xe thực hành: Xe nhà, đảm bảo chất lượng</li>
+            <li>Tổng số giờ học thực hành: 35 giờ</li>
+            <li>Học thực hành 1 kèm 1 với giáo viên kinh nghiệm</li>
+            <li>Hướng dẫn kỹ thuật lái xe an toàn</li>
+            <li>Học và thi thử trên xe cảm ứng</li>
+            <li>Hỗ trợ đăng ký thi sát hạch và cấp bằng</li>
+          </ul>
+          <a href="#contact" class="btn">Đăng Ký Ngay</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="requirements">
+    <div class="container">
+      <div class="section-title">
+        <h2>Hồ Sơ Học Lái Xe</h2>
+        <p>Các giấy tờ cần thiết để đăng ký khóa học lái xe</p>
+      </div>
+      <p>Để đăng ký khóa học lái xe, bạn cần chuẩn bị các giấy tờ sau:</p>
+      <ul class="feature-list">
+        <li>Phiếu khám sức khỏe học lái xe</li>
+        <li>10 tấm hình 3x4 nền màu xanh</li>
+        <li>Photo căn cước + A1 (nếu có)</li>
+      </ul>
+      <p><strong>Địa chỉ trường:</strong> 46 Hoa Mai, Phường 2, Quận Phú Nhuận, TP. Hồ Chí Minh</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Liên Hệ Với Chúng Tôi</h2>
+        <p>Hãy liên hệ với chúng tôi để được tư vấn chi tiết</p>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Thông Tin Liên Hệ</h3>
+          <div>
+            <i>📞</i>
+            <p>Thầy Hải: 0903 785 483</p>
+          </div>
+          <div>
+            <i>📍</i>
+            <p>46 Hoa Mai, Phường 2, Quận Phú Nhuận, TP. Hồ Chí Minh</p>
+          </div>
+          <div>
+            <i>🏫</i>
+            <p>Trường Dạy Lái Xe Quý Đức</p>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Gửi Tin Nhắn Cho Chúng Tôi</h3>
+          <form>
+            <input type="text" placeholder="Họ và tên">
+            <input type="text" placeholder="Số điện thoại">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Nội dung tin nhắn"></textarea>
+            <button type="submit" class="btn">Gửi Tin Nhắn</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Trường Dạy Lái Xe Quý Đức. Tất cả các quyền được bảo lưu.</p>
+    </div>
+  </footer>
+</body>
+</html>
