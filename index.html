@@ -676,6 +676,19 @@
       grid-template-columns: 1fr;
     }
   }
+        .service-icon {
+          font-size: 2.5rem;
+          text-align: center;
+          margin-bottom: 15px;
+          color: #003366;
+        }
+        
+        /* Đảm bảo hiển thị 3 dịch vụ mỗi hàng trên màn hình lớn */
+        @media (min-width: 992px) {
+          .services-container {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
   </style>
 </head>
 <body>
@@ -720,28 +733,43 @@
     </div>
   </section>
 
-  <section class="services fade-in" id="services">
+ <section class="services fade-in" id="services">
     <div class="container">
       <div class="section-title">
         <h2>Dịch Vụ Của Chúng Tôi</h2>
         <p>Chúng tôi cung cấp tất cả các dịch vụ liên quan đến Bằng lái xe Uy Tín - Chuyên Nghiệp</p>
       </div>
+      
       <div class="services-container">
         <div class="service-card">
-          <h3>Đào Tạo Dạy Lái Xe</h3>
+          <div class="service-icon">🚗</div>
+          <h3>Đào Tạo Lái Xe</h3>
           <p>Dịch vụ đào tạo lái xe chuyên nghiệp từ cơ bản đến nâng cao cho tất cả các hạng bằng, với giáo viên giàu kinh nghiệm giúp bạn nhanh chóng làm chủ tay lái.</p>
         </div>
         <div class="service-card">
-          <h3>Cấp Đổi Mới Bằng Lái </h3>
-          <p>Hỗ trợ thủ tục cấp mới, đổi bằng lái đã hết hạn, bị mất hoặc hư hỏng. Quy trình đơn giản, nhanh chóng và hợp pháp cho tất cả các hạng bằng.</p>
+          <div class="service-icon">🪪</div>
+          <h3>Cấp & Đổi Bằng Lái</h3>
+          <p>Hỗ trợ thủ tục cấp mới, đổi bằng lái đã hết hạn, bị mất hoặc hư hỏng. Quy trình đơn giản, nhanh chóng cho cả bằng lái nội địa và quốc tế.</p>
         </div>
         <div class="service-card">
-          <h3>Đổi Bằng Lái Quốc Tế</h3>
-          <p>Hỗ trợ thủ tục đổi bằng lái xe quốc tế, giúp bạn sử dụng bằng lái tại nhiều quốc gia. Hướng dẫn chuẩn bị hồ sơ và thực hiện thủ tục nhanh chóng.</p>
+          <div class="service-icon">⬆️</div>
+          <h3>Nâng Hạng Bằng Lái</h3>
+          <p>Dịch vụ hỗ trợ nâng hạng bằng lái từ hạng B lên C, D1, D2 và các hạng cao hơn. Tư vấn điều kiện, thủ tục và đào tạo chuyên sâu để đạt yêu cầu.</p>
         </div>
         <div class="service-card">
-          <h3>Thuê Tập Lái Riêng</h3>
-          <p>Dịch vụ thuê xe và giáo viên tập lái riêng theo giờ với giá hợp lý. Được hướng dẫn 1 kèm 1 để nâng cao kỹ năng lái xe và tự tin trước khi thi sát hạch.</p>
+          <div class="service-icon">👨‍🏫</div>
+          <h3>Thuê Xe & Giáo Viên</h3>
+          <p>Dịch vụ thuê xe tập lái kèm giáo viên hướng dẫn 1-1 theo giờ với giá hợp lý. Linh hoạt thời gian, lộ trình phù hợp với nhu cầu cá nhân của từng học viên.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📋</div>
+          <h3>Hỗ Trợ Hồ Sơ</h3>
+          <p>Nhận hồ sơ các hạng A1, A, B, C1 và hỗ trợ giáo viên gửi hồ sơ. Tư vấn chuẩn bị hồ sơ đầy đủ, chính xác và theo dõi tiến trình xử lý.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛣️</div>
+          <h3>Đào Tạo Thực Hành</h3>
+          <p>Bổ túc tay lái xe số sàn, số tự động theo giờ và hướng dẫn thực hành sa hình. Chương trình đào tạo thực tế, giúp học viên tự tin trước khi thi sát hạch.</p>
         </div>
       </div>
     </div>
